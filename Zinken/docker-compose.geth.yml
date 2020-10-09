@@ -1,0 +1,10 @@
+version: '3.1'
+services:
+  geth:
+    image: ethereum/client-go:v1.9.22
+    command: --datadir=/data/ --syncmode "fast" --goerli --http.addr 0.0.0.0 --ws --http --http.api "eth,net,web3,admin,personal,txpool" --http.corsdomain "*"
+    restart: always
+    ports:
+      - "8545:8545"
+    volumes:
+      - /opt/ethdata:/data

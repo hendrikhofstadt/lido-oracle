@@ -1,0 +1,17 @@
+version: '3.1'
+services:
+  lighthouse_validator:
+    image: sigp/lighthouse:v0.3.0
+    command: >
+      lighthouse
+      beacon_node
+      --datadir /data
+      --testnet zinken
+      --http
+      --http-address 0.0.0.0
+      --eth1-endpoint http://95.217.143.218:7575
+    ports:
+      - 5052:5052
+    restart: always
+    volumes:
+      - ./data:/data

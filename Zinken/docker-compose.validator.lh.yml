@@ -1,0 +1,8 @@
+version: '3.1'
+services:
+  geth:
+    image: sigp/lighthouse
+    command: lighthouse --zinken vc
+    restart: always
+    volumes:
+      - ./data:/root/.lighthouse

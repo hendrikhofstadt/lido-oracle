@@ -1,0 +1,12 @@
+version: '3.1'
+services:
+  prysm:
+    image: gcr.io/prysmaticlabs/prysm/beacon-chain:latest
+    command: --datadir=/data --rpc-host=0.0.0.0 --monitoring-host=0.0.0.0 --http-web3provider=http://95.217.143.218:7575 --grpc-gateway-host=0.0.0.0 --zinken
+    ports:
+      - "4000:4000"
+      - "12000:12000"
+      - "13000:13000"
+      - "5555:3500"
+    volumes:
+      - ./data:/data
